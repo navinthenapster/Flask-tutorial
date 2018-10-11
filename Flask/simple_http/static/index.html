@@ -1,0 +1,28 @@
+<html>
+<title>Simple HTTP Model</title>
+<!--<script src="{{ url_for('static', filename='index.js') }}"></script>-->
+<script src="/files/index.js">  </script>
+
+<h2>ITEM LIST</h2>
+
+{% if (items) %}
+<small>{{items }}</small>
+
+<ul>
+{% for i in items %}
+<li>{{i}}</li> 
+{% endfor %}
+<ul>
+{% else %}
+No items
+
+{% endif %}
+
+<form action="/add/form" method="POST">
+<input name="new_data">
+<button type="submit">Add</button>
+</form>
+
+
+</html>
+
